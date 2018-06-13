@@ -1,0 +1,10 @@
+#!/bin/bash
+Lines=`wc –l $1`
+While[$lines –gt 0]
+do
+	sed –n ‘$lines p’ $1 >> temp
+	lines=`expr $lines-1`
+done
+echo “reverse of the file is”
+tac temp
+
